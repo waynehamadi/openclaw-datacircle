@@ -1,0 +1,58 @@
+{
+  "name": "@datacircle/openclaw-datacircle",
+  "version": "0.1.0",
+  "description": "Find the best GTM APIs from OpenClaw: every API, who is best for each, every plan and each provider, from Datacircle's open API with no key",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://datacircle.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waynehamadi/openclaw-datacircle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/waynehamadi/openclaw-datacircle/issues"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "datacircle",
+    "gtm",
+    "api",
+    "pricing",
+    "benchmark"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "plugin:build": "npm run build && openclaw plugins build --entry ./dist/index.js",
+    "plugin:validate": "npm run build && openclaw plugins validate --entry ./dist/index.js",
+    "test": "vitest run --config ./vitest.config.ts"
+  },
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.5.17"
+  },
+  "dependencies": {
+    "typebox": "^1.1.38"
+  },
+  "devDependencies": {
+    "openclaw": "2026.11.3",
+    "typescript": "7.0.2",
+    "vitest": "^3.2.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.5.17"
+    },
+    "build": {
+      "openclawVersion": "2026.11.3"
+    }
+  }
+}
